@@ -10,5 +10,5 @@ const ItemSchema = new mongoose.Schema({
   price: { type: Number, required: true },
 });
 
-const ItemModel = mongoose.model('Item', ItemSchema);
+const ItemModel = mongoose.model("Item", ItemSchema);
 module.exports = ItemModel;
