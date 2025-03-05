@@ -23,7 +23,7 @@
 //     console.log(`Server is running on ${PORT}`)
 // })
 
-
+const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -38,6 +38,7 @@ const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.json()); // Replaces bodyParser.json()
+app.use(bodyParser.json());
 app.use(cors({
     origin: '*', // Adjust this based on your security needs (e.g., allow only frontend domain)
     methods: ['GET', 'POST', 'PUT', 'DELETE'],

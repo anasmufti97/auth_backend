@@ -12,8 +12,8 @@ router.post('/add', ensureAuthenticated, async (req, res) => {
         await newItem.save();
 
         res.status(201).json({ message: 'Item added successfully', success: true, item: newItem });
-    } catch (err) {
-        res.status(500).json({ message: 'Internal server error', success: false });
+    } catch (err) {   
+        res.status(500).json({ message: 'Internal server error', success: false, error: err.message });
     }
 });
 
